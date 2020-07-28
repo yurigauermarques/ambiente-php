@@ -1,0 +1,13 @@
+/nbproject/private/
+/nbproject/
+
+/app
+
+/docker/mysql/*
+!docker/mysql/.gitkeep
+!/docker/mysql/sql
+
+/docker/nginx/logs/*
+!/docker/nginx/logs/api
+/docker/nginx/logs/api/*
+!docker/nginx/logs/api/.gitkeep

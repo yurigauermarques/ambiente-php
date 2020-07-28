@@ -1,0 +1,42 @@
+version: "3.8"
+services:
+
+    php:
+        build:
+            context: ./docker/php/
+            dockerfile: Dockerfile
+        container_name: PHP7
+        volumes:
+            - ./app:/var/www/app
+            
+    web:
+        image: nginx:latest
+        container_name: Nginx
+        ports:
+            - "80:80"
+            - "443:443"
+        volumes:
+            - ./app/web:/var/www/app/web
+            - ./docker/nginx/nginx.conf:/etc/nginx/nginx.conf
+            - ./docker/nginx/conf.d/:/etc/nginx/conf.d/
+            - ./docker/nginx/certs/:/etc/ssl/al.mt.gov.br/
+            - ./docker/nginx/logs:/var/log/nginx/
+        links:
+            - php
+
+    mysql:
+        image: mysql:5.6
+        container_name: MySQL
+        command: --default-authentication-plugin=mysql_native_password        
+#        volumes:
+#            - ./docker/mysql/data/:/var/lib/mysql
+        ports:
+            - 33061:3306
+            
+    composerApi:
+        image: composer:latest
+        container_name: ComposerApi
+        command: install  
+        volumes:
+            - ./app:/app
+#            - ~/.ssh:/root/.ssh
