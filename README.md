@@ -5,15 +5,18 @@
 ## Conteúdo
   - Aplicação Symfony 3.4 para servir de exemplo na instalação
   - Configuração de docker-compose com
-    - PHP7
-        - php:7.4-fpm
+    - [PHP7])(https://pt.wikipedia.org/wiki/PHP)
+        - [php:7.4-fpm](https://hub.docker.com/_/php)
         - pdo_mysql
-    - Nginx
-        - nginx:latest
+    - [Nginx](https://pt.wikipedia.org/wiki/Nginx)
+        - [nginx:1.19.1](https://hub.docker.com/_/nginx)
         - conf.d/app.conf para exemplo
-    - MySQL 
+    - [MySQL](https://pt.wikipedia.org/wiki/MySQL)
+        - [mysql:8](https://hub.docker.com/_/mysql)
+        - Inicia o banco com um `.sql`
 
-    - [Composer](https://getcomposer.org/)
+    - [Composer](https://getcomposer.org) 
+        - [composer:1](https://hub.docker.com/_/composer)
         - Configurado para instalar as dependencias da App de exemplo
 
 

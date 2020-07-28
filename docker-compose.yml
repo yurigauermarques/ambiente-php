@@ -10,7 +10,7 @@ services:
             - ./app:/var/www/app
             
     web:
-        image: nginx:latest
+        image: nginx:1.19.1
         container_name: Nginx
         ports:
             - "80:80"
@@ -19,24 +19,28 @@ services:
             - ./app/public:/var/www/app/public
             - ./docker/nginx/nginx.conf:/etc/nginx/nginx.conf
             - ./docker/nginx/conf.d/:/etc/nginx/conf.d/
-            - ./docker/nginx/certs/:/etc/ssl/al.mt.gov.br/
             - ./docker/nginx/logs:/var/log/nginx/
         links:
             - php
 
     mysql:
-        image: mysql:5.6
+        image: mysql:8
         container_name: MySQL
-        command: --default-authentication-plugin=mysql_native_password        
-#        volumes:
-#            - ./docker/mysql/data/:/var/lib/mysql
+        command: --default-authentication-plugin=mysql_native_password  
+        environment:
+          - MYSQL_DATABASE=app
+          - MYSQL_USER=userapp
+          - MYSQL_PASSWORD="123456"
+          - MYSQL_ROOT_PASSWORD="root123"
+        volumes:
+          - ./docker/sql/data.sql:/docker-entrypoint-initdb.d/data.sql
         ports:
             - 33061:3306
             
-    composerApi:
-        image: composer:latest
-        container_name: ComposerApi
+    composer:
+        image: composer:1
+        container_name: Composer
         command: install  
         volumes:
             - ./app:/app
-#            - ~/.ssh:/root/.ssh
+            - ~/.ssh:/root/.ssh
