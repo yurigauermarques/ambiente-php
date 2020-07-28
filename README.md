@@ -2,6 +2,19 @@
   - necessário ter o [docker](https://docs.docker.com/install/linux/docker-ce/centos/) e o [docker-compose](https://github.com/docker/compose/) instalados;
   - Para instalar pode seguir o [Instalação do docker](./instalação_docker.md)
 
+## Conteúdo
+  - Aplicação Symfony 3.4 para servir de exemplo na instalação
+  - Configuração de docker-compose com
+    - PHP7
+        - php:7.4-fpm
+        - pdo_mysql
+    - Nginx
+        - nginx:latest
+        - conf.d/app.conf para exemplo
+    - MySQL 
+
+    - [Composer](https://getcomposer.org/)
+        - Configurado para instalar as dependencias da App de exemplo
 
 
 ## Instalação Aplicação
@@ -39,8 +52,6 @@
 ## Pendencias
   - php.ini
   - yarn
-  - Melhorar forma de utilizar o MySQL, para atender vários projetos
-  - Estudar como montar varios projetos independentes para cada aplicação
   - Modsecurity
     - [Dockerhub](https://hub.docker.com/r/owasp/modsecurity)
     - [Dockerfile com a V3](https://github.com/coreruleset/modsecurity-docker/blob/master/v3-nginx/Dockerfile)

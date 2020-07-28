@@ -1,8 +1,6 @@
 /nbproject/private/
 /nbproject/
 
-/app
-
 /docker/mysql/*
 !docker/mysql/.gitkeep
 !/docker/mysql/sql
