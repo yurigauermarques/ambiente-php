@@ -16,7 +16,7 @@ services:
             - "80:80"
             - "443:443"
         volumes:
-            - ./app/public:/var/www/app/public
+            - ./app/web:/var/www/app/web
             - ./docker/nginx/nginx.conf:/etc/nginx/nginx.conf
             - ./docker/nginx/conf.d/:/etc/nginx/conf.d/
             - ./docker/nginx/logs:/var/log/nginx/
@@ -40,7 +40,10 @@ services:
     composer:
         image: composer:1
         container_name: Composer
-        command: install  
+        command: install
+#        command: update  
+#        command: create-project symfony/framework-standard-edition app
+#        command: create-project symfony/skeleton:"^4.4" ap2
         volumes:
-            - ./app:/app
+            - ./app:/app/
             - ~/.ssh:/root/.ssh

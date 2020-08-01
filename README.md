@@ -5,7 +5,7 @@
 ## Conteúdo
   - Aplicação Symfony 3.4 para servir de exemplo na instalação
   - Configuração de docker-compose com
-    - [PHP7])(https://pt.wikipedia.org/wiki/PHP)
+    - [PHP7](https://pt.wikipedia.org/wiki/PHP)
         - [php:7.4-fpm](https://hub.docker.com/_/php)
         - pdo_mysql
     - [Nginx](https://pt.wikipedia.org/wiki/Nginx)
@@ -61,3 +61,24 @@
   - Traefik
     -[Docker - Traefik](https://docs.traefik.io/v1.7/configuration/backends/docker)
     -[Documentação do Traefik](https://docs.traefik.io/v1.7/#1-launch-traefik-tell-it-to-listen-to-docker)
+
+
+## Exemplos de como utilizar o Composer
+- Exemplo de como informar o caminho absoluto no `Windows`:
+    ```bash
+    docker run --rm --interactive --tty --volume  C:\Projetos\AmbientePHP\:/app composer create-project symfony/framework-standard-edition my_project_name;
+    ```
+- Instalar um Projeto `Symfony 3.4` com `Composer`
+  - No Windows
+    ```bash
+    docker run --rm --interactive --tty --volume  C:\Projetos\AmbientePHP\:/app composer create-project symfony/framework-standard-edition my_project_name;
+    ```
+  - No Linux
+    ```bash
+    docker run --rm --interactive --tty --volume  /var/www/AmbientePHP/:/app composer create-project symfony/framework-standard-edition my_project_name;
+    ```
+- Executar comandos úteis do `Composer`
+    ```bash
+    docker run --rm --interactive --tty --volume  C:\Projetos\AmbientePHP\app\:/app composer install;
+    docker run --rm --interactive --tty --volume  C:\Projetos\AmbientePHP\app\:/app composer update
+    ```
