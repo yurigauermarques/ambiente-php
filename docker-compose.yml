@@ -26,24 +26,22 @@ services:
     mysql:
         image: mysql:8
         container_name: MySQL
-        command: --default-authentication-plugin=mysql_native_password  
+        command: --default-authentication-plugin=mysql_native_password
         environment:
           - MYSQL_DATABASE=app
           - MYSQL_USER=userapp
-          - MYSQL_PASSWORD="123456"
-          - MYSQL_ROOT_PASSWORD="root123"
+          - MYSQL_PASSWORD=123456
+          - MYSQL_ROOT_PASSWORD=root123
         volumes:
           - ./docker/sql/data.sql:/docker-entrypoint-initdb.d/data.sql
         ports:
-            - 33061:3306
+            - 3306:3306
             
     composer:
         image: composer:1
         container_name: Composer
         command: install
-#        command: update  
-#        command: create-project symfony/framework-standard-edition app
-#        command: create-project symfony/skeleton:"^4.4" ap2
+#        command: update
         volumes:
             - ./app:/app/
             - ~/.ssh:/root/.ssh
