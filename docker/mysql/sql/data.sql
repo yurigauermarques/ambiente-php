@@ -18,35 +18,35 @@ USE `app`;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `tabela`
+-- Table structure for table `pessoa`
 --
 
-DROP TABLE IF EXISTS `tabela`;
+DROP TABLE IF EXISTS `pessoa`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `tabela` (
-  `id` int NOT NULL AUTO_INCREMENT,
-  `nome` varchar(45) DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+CREATE TABLE pessoa (
+    id INT AUTO_INCREMENT NOT NULL, 
+    name VARCHAR(255) NOT NULL, 
+    PRIMARY KEY(id)
+)DEFAULT CHARACTER SET UTF8 COLLATE `UTF8_unicode_ci` ENGINE = InnoDB;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `tabela`
+-- Dumping data for table `pessoa`
 --
 
-LOCK TABLES `tabela` WRITE;
-/*!40000 ALTER TABLE `tabela` DISABLE KEYS */;
-INSERT INTO `tabela` VALUES (1,'teste'),(2,'aboboea');
-/*!40000 ALTER TABLE `tabela` ENABLE KEYS */;
+LOCK TABLES `pessoa` WRITE;
+/*!40000 ALTER TABLE `pessoa` DISABLE KEYS */;
+INSERT INTO `pessoa` VALUES (1,'Jão'),(2,'José');
+/*!40000 ALTER TABLE `pessoa` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
--- Dumping events for database 'teste'
+-- Dumping events for database 'app'
 --
 
 --
--- Dumping routines for database 'teste'
+-- Dumping routines for database 'app'
 --
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 

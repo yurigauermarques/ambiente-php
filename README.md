@@ -81,4 +81,6 @@
     ```bash
     docker run --rm --interactive --tty --volume  C:\Projetos\AmbientePHP\app\:/app composer install;
     docker run --rm --interactive --tty --volume  C:\Projetos\AmbientePHP\app\:/app composer update
+
+docker run --rm --interactive --tty --volume  C:\Users\yurig\Projetos\AmbientePHP\app\:/app composer require symfony/dotenv:^3.4
     ```

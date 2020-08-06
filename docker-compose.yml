@@ -28,12 +28,13 @@ services:
         container_name: MySQL
         command: --default-authentication-plugin=mysql_native_password
         environment:
-          - MYSQL_DATABASE=app
-          - MYSQL_USER=userapp
-          - MYSQL_PASSWORD=123456
-          - MYSQL_ROOT_PASSWORD=root123
+          - MYSQL_DATABASE=${MYSQL_DATABASE}
+          - MYSQL_USER=${MYSQL_USER}
+          - MYSQL_PASSWORD=${MYSQL_PASSWORD}
+          - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+          
         volumes:
-          - ./docker/sql/data.sql:/docker-entrypoint-initdb.d/data.sql
+          - ./docker/mysql/sql/data.sql:/docker-entrypoint-initdb.d/data.sql
         ports:
             - 3306:3306
             
