@@ -32,6 +32,9 @@
         "symfony/phpunit-bridge": "^3.0"
     },
     "scripts": {
+        "environment": [
+            "AppBundle\\Command\\ScriptHandler::buildEnvironment"
+        ],
         "symfony-scripts": [
             "Incenteev\\ParameterHandler\\ScriptHandler::buildParameters",
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::buildBootstrap",
@@ -41,9 +44,11 @@
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::prepareDeploymentTarget"
         ],
         "post-install-cmd": [
+            "@environment",
             "@symfony-scripts"
         ],
         "post-update-cmd": [
+            "@environment",
             "@symfony-scripts"
         ]
     },
