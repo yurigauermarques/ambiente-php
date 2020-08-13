@@ -44,7 +44,12 @@ services:
         container_name: Composer
         command: install
 #        command: update
+        environment:
+          - MYSQL_HOST=${MYSQL_HOST}
+          - MYSQL_DATABASE=${MYSQL_DATABASE}
+          - MYSQL_USER=${MYSQL_USER}
+          - MYSQL_PASSWORD=${MYSQL_PASSWORD}
+          - MYSQL_PORT=${MYSQL_PORT}
         volumes:
             - ./app:/app/
             - ~/.ssh:/root/.ssh
-            - .env:/app/.env

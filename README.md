@@ -84,3 +84,10 @@
 
 docker run --rm --interactive --tty --volume  C:\Users\yurig\Projetos\AmbientePHP\app\:/app composer require symfony/dotenv:^3.4
     ```
+
+## Exemplos úteis
+- Exemplo de como atribuir valores para *variáveis de ambiente* direto na linha de comando para substituir o `.env`:
+    ```bash
+    export MAILER_USER=TESTE;
+    export MYSQL_USER=userPrompt;
+    ```
