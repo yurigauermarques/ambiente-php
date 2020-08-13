@@ -49,7 +49,6 @@ services:
           - MYSQL_DATABASE=${MYSQL_DATABASE}
           - MYSQL_USER=${MYSQL_USER}
           - MYSQL_PASSWORD=${MYSQL_PASSWORD}
-          - MYSQL_PORT=${MYSQL_PORT}
         volumes:
             - ./app:/app/
             - ~/.ssh:/root/.ssh
