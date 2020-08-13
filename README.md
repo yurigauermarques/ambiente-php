@@ -15,7 +15,7 @@
         - [mysql:8](https://hub.docker.com/_/mysql)
         - Inicia o banco com um `.sql`
 
-    - [Composer](https://getcomposer.org) 
+    - [Composer](https://getcomposer.org)
         - [composer:1](https://hub.docker.com/_/composer)
         - Configurado para instalar as dependencias da App de exemplo
 
@@ -24,11 +24,8 @@
   - Codigo Fonte
     ```bash
     cd /var/www/;
-    git clone git@gitlab.com:yurigmarques/symfonyproject1.git;
+    git clone https://github.com/yurigauermarques/AmbientePHP.git;
     ```
-  - Base de dados
-    
-
   - Configuração de host
     - editar o `hosts`
     - adicione o conteudo no final
@@ -41,7 +38,7 @@
       ```bash
       docker-compose up -d --build
       ```
-  - Derrubar o serviço 
+  - Derrubar o serviço
       ```bash
       docker-compose down
       ```
@@ -81,8 +78,6 @@
     ```bash
     docker run --rm --interactive --tty --volume  C:\Projetos\AmbientePHP\app\:/app composer install;
     docker run --rm --interactive --tty --volume  C:\Projetos\AmbientePHP\app\:/app composer update
-
-docker run --rm --interactive --tty --volume  C:\Users\yurig\Projetos\AmbientePHP\app\:/app composer require symfony/dotenv:^3.4
     ```
 
 ## Exemplos úteis
