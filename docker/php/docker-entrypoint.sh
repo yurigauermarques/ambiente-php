@@ -7,8 +7,8 @@ if [ "${1#-}" != "$1" ]; then
 fi
 
 if [ "$1" = 'php-fpm' ] || [ "$1" = 'bin/console' ]; then
-	setfacl -R -m u:www-data:rwX -m u:"$(whoami)":rwX /var/www/api/var
-	setfacl -dR -m u:www-data:rwX -m u:"$(whoami)":rwX /var/www/api/var	
+	setfacl -R -m u:www-data:rwX -m u:"$(whoami)":rwX /var/www/app/var
+	setfacl -dR -m u:www-data:rwX -m u:"$(whoami)":rwX /var/www/app/var	
 fi
 
 exec docker-php-entrypoint "$@"

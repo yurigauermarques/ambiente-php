@@ -42,8 +42,6 @@ services:
     composer:
         image: composer:1
         container_name: Composer
-        command: install
-#        command: update
         environment:
           - MYSQL_HOST=${MYSQL_HOST}
           - MYSQL_DATABASE=${MYSQL_DATABASE}

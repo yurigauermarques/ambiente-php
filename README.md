@@ -1,6 +1,5 @@
 ## Requisito
-  - necessário ter o [docker](https://docs.docker.com/install/linux/docker-ce/centos/) e o [docker-compose](https://github.com/docker/compose/) instalados;
-  - Para instalar pode seguir o [Instalação do docker](./instalação_docker.md)
+  - necessário ter o [docker](https://docs.docker.com/engine/install/) e o [docker-compose](https://docs.docker.com/compose/install/) instalados;
 
 ## Conteúdo
   - Aplicação Symfony 3.4 para servir de exemplo na instalação
@@ -61,10 +60,6 @@
 
 
 ## Exemplos de como utilizar o Composer
-- Exemplo de como informar o caminho absoluto no `Windows`:
-    ```bash
-    docker run --rm --interactive --tty --volume  C:\Projetos\AmbientePHP\:/app composer create-project symfony/framework-standard-edition my_project_name;
-    ```
 - Instalar um Projeto `Symfony 3.4` com `Composer`
   - No Windows
     ```bash
@@ -76,8 +71,8 @@
     ```
 - Executar comandos úteis do `Composer`
     ```bash
-    docker run --rm --interactive --tty --volume  C:\Projetos\AmbientePHP\app\:/app composer install;
-    docker run --rm --interactive --tty --volume  C:\Projetos\AmbientePHP\app\:/app composer update
+    docker-compose run --rm composer install;
+    docker-compose run --rm composer update;
     ```
 
 ## Exemplos úteis
